@@ -14,7 +14,8 @@ const Contact = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  }git commit -m "first commit"
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
