@@ -62,29 +62,48 @@ const educationData = [
 
 const Education = () => {
   return (
-    <section className="mt-12 pb-12 bg-gray-50">
-      <h1 className="text-4xl font-bold p-12"><span className=" text-purple-600">Education</span> & <span className="text-pink-500">Experience</span></h1>
+    <section className="pb-12 px-5 md:px-16 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold pb-12 text-gray-900 dark:text-white">
+        <span className="text-purple-600">Education</span> &{" "}
+        <span className="text-pink-500">Experience</span>
+      </h1>
+
       <div className="flex flex-wrap justify-center gap-8">
         {educationData.map((edu, index) => (
-        <div
-          key={index}
-          className="max-w-md w-full font-raleway border-2 border-violet-500 shadow-lg shadow-slate-400 text-white rounded-lg overflow-hidden"
-        >
-          <p className= "text-green-800  mx-auto text-center mt-2">{edu.period}</p>
-          <div className="px-4 py-2 flex items-center gap-5 justify-between">
-            <div className="text-4xl text-green-800 mx-auto">{edu.icon}</div>
-            <div>
-              <h1 className="text-xl font-bold text-black font-raleway mt-5 mb-5">{edu.title}</h1>
-              {edu.details.map((detail, i) => (
-                <h2 key={i} className="mb-5 text-gray-600">{detail}</h2>
-              ))}
+          <div
+            key={index}
+            className="max-w-md w-full font-raleway border-2 border-violet-500 shadow-lg shadow-slate-400 dark:shadow-black bg-white dark:bg-gray-800 rounded-lg overflow-hidden transition-all"
+          >
+            <p className="text-green-800 dark:text-green-400 mx-auto text-center mt-2">
+              {edu.period}
+            </p>
+
+            <div className="px-4 py-2 flex items-center gap-5 justify-between">
+              <div className="text-4xl text-green-800 dark:text-green-400 mx-auto">
+                {edu.icon}
+              </div>
+
+              <div>
+                <h1 className="text-xl font-bold text-black dark:text-white mt-5 mb-5">
+                  {edu.title}
+                </h1>
+
+                {edu.details.map((detail, i) => (
+                  <h2
+                    key={i}
+                    className="mb-5 text-gray-600 dark:text-gray-300"
+                  >
+                    {detail}
+                  </h2>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
       </div>
     </section>
   );
 };
-
 export default Education;
